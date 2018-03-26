@@ -5,6 +5,6 @@ package com.example.rauda.firstapp;
  */
 
 public class NetworkGeneralHelper {
-    public static final String BASE_FINAL_URL = " http://cherryinspect.databot.io";
+    public static final String BASE_FINAL_URL = " http://cherryinspect.databot.ioa";
 
 }

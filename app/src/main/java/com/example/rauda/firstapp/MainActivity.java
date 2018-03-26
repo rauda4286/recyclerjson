@@ -7,6 +7,8 @@ import android.util.Log;
 import android.app.Activity;
 import android.widget.TextView;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -14,7 +16,8 @@ import retrofit2.Response;
 public class MainActivity extends Activity {
 
 
-    TextView message;
+    TextView make,model,mark,vin,plate,milles;
+
     ModelInterface client;
     ApiProvider provider;
 
@@ -23,10 +26,18 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        message = (TextView) findViewById(R.id.message);
+                make = (TextView) findViewById(R.id.make);
+                 vin = (TextView)findViewById(R.id.vin);
+                model = (TextView)findViewById(R.id.model);
+                mark = (TextView)findViewById(R.id.mark);
+                plate = (TextView)findViewById(R.id.plate);
+                milles = (TextView)findViewById(R.id.milles);
+
 
         provider = new ApiProvider();
         client = provider.registerWorkshopClient();
+
+
 
         Call<User> userCallApi = client.getUser();
 
@@ -37,8 +48,7 @@ public class MainActivity extends Activity {
 
 
                 if (response.isSuccessful()) {
-                    message.setText("Test H"+response.body().getVehicle());
-
+                    model.setText("Test H"+response.body().getVehicle());
                 }
                 else {
                     Log.d("Error","Hubo un error");

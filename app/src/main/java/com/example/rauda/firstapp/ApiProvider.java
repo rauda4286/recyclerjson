@@ -8,6 +8,7 @@ package com.example.rauda.firstapp;
  * Parametros: store_id: 157draft: 0(latestinspections).
  * Y valor de 1 (draft)
  * Header: Authorization: CZLjbUCekUD8QaxctLJ**/
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 

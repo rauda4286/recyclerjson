@@ -1,8 +1,11 @@
 package com.example.rauda.firstapp;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.HEAD;
 
 /**
  * Created by rauda on 03-22-18.
@@ -10,7 +13,7 @@ import retrofit2.http.POST;
 
 public interface ModelInterface {
 
-    @GET("api/v1/inspections")
+    @POST("/pi/v1/inspections")
     Call<User> getUser();
 
 
